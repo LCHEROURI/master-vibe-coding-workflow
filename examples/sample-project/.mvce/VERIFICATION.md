@@ -34,7 +34,7 @@ interpreted Python. No dedicated linter/type checker is configured.
 | AC5 | `test_invalid_and_unknown_ids_preserve_rows_ac5` (four input cases) | PASS — E2 |
 | AC6 | Missing parent and corrupt database tests | PASS — E2 |
 | AC7 | Stopped-database restoration test and independent shell path | PASS — E2, E3 |
-| AC8 | Artifact/phase review and scope/link checks | See E4 and workbook |
+| AC8 | Artifact/phase review and scope/link checks | PASS for local docs — E4/E6 and workbook; PR delivery blocked separately |
 
 E2 ran eight tests, all passed, zero skipped, exit 0. E3 printed the actual JSON
 and asserted both intermediate and restored data, exit 0. No build step is

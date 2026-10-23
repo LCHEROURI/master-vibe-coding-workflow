@@ -42,7 +42,7 @@ Only Python 3.12.14/Linux was tested; 3.10+ is the intended compatibility floor.
 | 6 Implementation | PASS — local contract implemented, eight green tests |
 | 7 Verification | PASS locally — subprocess tests plus a separate asserted shell path; same agent ran both, no CI/human review claimed |
 | 8 Evidence | PASS — actual logs including capture failure and red tests, with code hashes |
-| 9 Commit | Pre-commit review PASS; delivery status is recorded in WORKBOOK.md |
+| 9 Commit | PASS — planning d8f7235 and implementation/evidence 2e7f622 committed and pushed; later delivery notes do not change application code |
 | 10 Pre-deployment | NO-GO — no production target, operating model or approval |
 | 11 Deployment | NOT RUN — blocked by deliberate NO-GO |
 | 12 Production verification | NOT RUN — no deployment; local smoke is not production evidence |
@@ -66,3 +66,12 @@ the source change, without merging automatically.
    checks and local-only delivery from production completion. The sample spells
    out NO-GO, NOT RUN, and excluded checks rather than producing a fake all-green
    workbook.
+
+## Delivery status
+
+The branch `feat/sample-mvce-task-tracker` is pushed to origin. Automated PR
+creation is blocked: the actual `gh pr create` returned
+`Post "https://api.github.com/graphql": Forbidden`, including when retried with
+the permitted network escalation. No PR has been created by this task. Enable
+`api.github.com` access, then run the command recorded as E5 using this report
+as `--body-file`. Do not treat the GitHub compare/new-PR link as an existing PR.

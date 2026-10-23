@@ -19,5 +19,5 @@ stopped CLI processes, not live-database file copying.
 
 ## Execution updates
 
-Final task results and evidence IDs will be recorded in WORKBOOK.md. The initial
+Final task results and evidence IDs are recorded in WORKBOOK.md. The initial
 plan above is retained so readers can distinguish intent from observed outcome.

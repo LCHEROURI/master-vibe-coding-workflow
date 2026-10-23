@@ -15,6 +15,8 @@ not commands to blindly overwrite on later runs.
 | E2 | From sample: `python3 -m unittest discover -s tests -v` after implementation | 8 executed, all passed, none skipped, exit 0; AC1–AC7 | [Green run](evidence/02-green-tests.txt) |
 | E3 | From sample: `bash smoke.sh` | Real JSON for add/list/done; offline restore matches expected saved state; exit 0 | [CLI and recovery](evidence/03-cli-and-recovery.txt) |
 | E4 | From sample: `python3 .mvce/check_artifacts.py` | Review validation is recorded in this log; this is not an application test or human approval | [Artifacts and scope](evidence/04-artifacts.txt) |
+| E5 | From repository root: `gh pr create --repo LCHEROURI/master-vibe-coding-workflow --base main --head feat/sample-mvce-task-tracker --title "Add runnable Pocket Tasks MVCE worked example" --body-file examples/sample-project/.mvce/PR-REPORT.md` | Exit 1: GitHub GraphQL request Forbidden; PR not created | [Publication failure](evidence/05-pr-publication.txt) |
+| E6 | From sample: `python3 .mvce/check_artifacts.py` after delivery-note updates | Final document links, artifact presence, app/test/smoke hashes, scope and diff checks | [Final artifact check](evidence/06-final-artifacts.txt) |
 
 ## Review judgments and chronology
 
@@ -31,3 +33,7 @@ red run, not a historical defect in released software. E2 and E3 cover the
 local contract; they do not establish production readiness or independent human
 review. No deployment occurred. Publication results are recorded in the
 workbook and delivery report, separately from acceptance of the local app.
+
+E4 is the first successful artifact check at that point in the task; later
+documentation-only delivery updates add links. The final check is preserved as
+E6 below rather than overwriting E4. Code/test/smoke hashes have not changed.

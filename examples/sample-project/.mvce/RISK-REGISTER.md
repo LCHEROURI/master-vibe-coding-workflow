@@ -7,4 +7,4 @@
 | R3 | Lost or corrupt database | Medium / task loss | SQLite transactions; surface errors; offline backup/restore drill (AC6–AC7) | Residual: no automatic backup or encryption |
 | R4 | Local results misrepresented as production readiness | Medium / misleading example | Production NO-GO; distinguish tests, manual review, unrun platforms and deployment | Open scope limitation |
 | R5 | Evidence becomes stale when code changes | Medium / false confidence | Commit logs with code; rerun checks on later changes; never silently overwrite failed records | Ongoing maintenance obligation |
-| R6 | PR publishing credentials unavailable | Unknown / delivery blocked | Test actual Git/PR operations; do not expose tokens or claim an unopened PR exists | Pending publication |
+| R6 | PR publishing access unavailable | Observed / delivery blocked | Git push succeeds; GitHub API/GraphQL returns Forbidden, E5; enable API access before diagnosing credentials | Open external blocker; no PR created |

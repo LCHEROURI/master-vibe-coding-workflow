@@ -1,0 +1,9 @@
+UTC: 2026-10-23T02:40:00.131278+00:00
+Working directory: /workspace/master-vibe-coding-workflow
+Command: gh pr create --repo LCHEROURI/master-vibe-coding-workflow --base main --head feat/sample-mvce-task-tracker --title 'Add runnable Pocket Tasks MVCE worked example' --body-file examples/sample-project/.mvce/PR-REPORT.md
+Absent: tasks.py
+Absent: tests/test_tasks.py
+Absent: smoke.sh
+--- combined stdout/stderr ---
+Post "https://api.github.com/graphql": Forbidden
+--- exit status: 1 ---

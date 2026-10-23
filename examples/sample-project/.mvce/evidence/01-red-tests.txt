@@ -1,0 +1,115 @@
+UTC: 2026-10-23T02:34:01.531505+00:00
+Working directory: /workspace/master-vibe-coding-workflow/examples/sample-project
+Command: python3 -m unittest discover -s tests -v
+Absent: tasks.py
+SHA256 tests/test_tasks.py: 9913425b6cbd260d3989101f15634b42b50f8455eab49b84cd7c445147c44308
+Absent: smoke.sh
+--- combined stdout/stderr ---
+test_blank_title_preserves_rows_ac4 (test_tasks.TasksCLI.test_blank_title_preserves_rows_ac4) ... FAIL
+test_complete_one_idempotently_ac3 (test_tasks.TasksCLI.test_complete_one_idempotently_ac3) ... FAIL
+test_corrupt_database_preserved_ac6 (test_tasks.TasksCLI.test_corrupt_database_preserved_ac6) ... FAIL
+test_empty_then_add_persists_ac1 (test_tasks.TasksCLI.test_empty_then_add_persists_ac1) ... FAIL
+test_invalid_and_unknown_ids_preserve_rows_ac5 (test_tasks.TasksCLI.test_invalid_and_unknown_ids_preserve_rows_ac5) ... FAIL
+test_literal_titles_and_order_ac2 (test_tasks.TasksCLI.test_literal_titles_and_order_ac2) ... FAIL
+test_missing_parent_reports_storage_error_ac6 (test_tasks.TasksCLI.test_missing_parent_reports_storage_error_ac6) ... FAIL
+test_stopped_database_backup_restore_ac7 (test_tasks.TasksCLI.test_stopped_database_backup_restore_ac7) ... FAIL
+
+======================================================================
+FAIL: test_blank_title_preserves_rows_ac4 (test_tasks.TasksCLI.test_blank_title_preserves_rows_ac4)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 61, in test_blank_title_preserves_rows_ac4
+    original = self.command("add", "Keep me")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 0 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_complete_one_idempotently_ac3 (test_tasks.TasksCLI.test_complete_one_idempotently_ac3)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 53, in test_complete_one_idempotently_ac3
+    first = self.command("add", "First")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 0 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_corrupt_database_preserved_ac6 (test_tasks.TasksCLI.test_corrupt_database_preserved_ac6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 80, in test_corrupt_database_preserved_ac6
+    self.command("list", status=1)
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 1 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_empty_then_add_persists_ac1 (test_tasks.TasksCLI.test_empty_then_add_persists_ac1)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 36, in test_empty_then_add_persists_ac1
+    self.assertEqual(self.command("list"), [])
+                     ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 0 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_invalid_and_unknown_ids_preserve_rows_ac5 (test_tasks.TasksCLI.test_invalid_and_unknown_ids_preserve_rows_ac5)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 66, in test_invalid_and_unknown_ids_preserve_rows_ac5
+    original = self.command("add", "Keep me")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 0 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_literal_titles_and_order_ac2 (test_tasks.TasksCLI.test_literal_titles_and_order_ac2)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 45, in test_literal_titles_and_order_ac2
+    first = self.command("add", "  café ☕  ")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 0 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_missing_parent_reports_storage_error_ac6 (test_tasks.TasksCLI.test_missing_parent_reports_storage_error_ac6)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 74, in test_missing_parent_reports_storage_error_ac6
+    self.command("list", db=missing, status=1)
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 1 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+======================================================================
+FAIL: test_stopped_database_backup_restore_ac7 (test_tasks.TasksCLI.test_stopped_database_backup_restore_ac7)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 84, in test_stopped_database_backup_restore_ac7
+    first = self.command("add", "Before backup")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/master-vibe-coding-workflow/examples/sample-project/tests/test_tasks.py", line 26, in command
+    self.assertEqual(result.returncode, status, result.stderr)
+AssertionError: 2 != 0 : /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3: can't open file '/workspace/master-vibe-coding-workflow/examples/sample-project/tasks.py': [Errno 2] No such file or directory
+
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.089s
+
+FAILED (failures=8)
+--- exit status: 1 ---

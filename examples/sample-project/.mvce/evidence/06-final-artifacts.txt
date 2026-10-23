@@ -1,0 +1,13 @@
+UTC: 2026-10-23T02:41:56.706582+00:00
+Working directory: /workspace/master-vibe-coding-workflow/examples/sample-project
+Command: python3 .mvce/check_artifacts.py
+SHA256 tasks.py: b144c6d589d79401046dd49b2442b7c24794aecd71b13846dc851ddf9b0a96d8
+SHA256 tests/test_tasks.py: 9913425b6cbd260d3989101f15634b42b50f8455eab49b84cd7c445147c44308
+SHA256 smoke.sh: e0a65bf68b365d91f4b080b51555e7fd1486de54f9863fb7b4d634d9e859a045
+--- combined stdout/stderr ---
+PASS: 10 required completed-artifact files exist (content requires review)
+PASS: 25 local Markdown link destinations exist (anchors not checked)
+PASS: green/smoke evidence hashes match current app, tests, and smoke script
+PASS: changed/untracked paths are inside sample or root README
+PASS: git diff --check against baseline
+--- exit status: 0 ---

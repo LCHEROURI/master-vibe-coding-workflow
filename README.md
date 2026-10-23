@@ -145,6 +145,8 @@ Platform-specific adapters may be added later. The core workflow should remain i
 - `templates/` — reusable project-control artifacts
 - `examples/` — worked examples as they are added
 
+See [Pocket Tasks](examples/sample-project/README.md) for a runnable end-to-end MVCE worked example with tests, real evidence, and an honest production NO-GO.
+
 ## Design goals
 
 MVCE is designed to be:

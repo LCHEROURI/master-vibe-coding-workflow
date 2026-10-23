@@ -1,0 +1,13 @@
+Working directory: /workspace/master-vibe-coding-workflow/examples/sample-project
+Command: python3 /tmp/mvce-capture.py .mvce/evidence/01-red-tests.txt python3 -m unittest discover -s tests -v
+Source: actual tool output from the initial capture attempt (transcribed)
+--- stdout/stderr ---
+Traceback (most recent call last):
+  File "/tmp/mvce-capture.py", line 10, in <module>
+    with log.open('w') as output:
+         ^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '.mvce/evidence/01-red-tests.txt'
+--- exit status: 1 ---

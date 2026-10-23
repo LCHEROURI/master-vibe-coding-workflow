@@ -1,0 +1,21 @@
+UTC: 2026-10-23T02:34:42.526847+00:00
+Working directory: /workspace/master-vibe-coding-workflow/examples/sample-project
+Command: python3 -m unittest discover -s tests -v
+SHA256 tasks.py: b144c6d589d79401046dd49b2442b7c24794aecd71b13846dc851ddf9b0a96d8
+SHA256 tests/test_tasks.py: 9913425b6cbd260d3989101f15634b42b50f8455eab49b84cd7c445147c44308
+SHA256 smoke.sh: e0a65bf68b365d91f4b080b51555e7fd1486de54f9863fb7b4d634d9e859a045
+--- combined stdout/stderr ---
+test_blank_title_preserves_rows_ac4 (test_tasks.TasksCLI.test_blank_title_preserves_rows_ac4) ... ok
+test_complete_one_idempotently_ac3 (test_tasks.TasksCLI.test_complete_one_idempotently_ac3) ... ok
+test_corrupt_database_preserved_ac6 (test_tasks.TasksCLI.test_corrupt_database_preserved_ac6) ... ok
+test_empty_then_add_persists_ac1 (test_tasks.TasksCLI.test_empty_then_add_persists_ac1) ... ok
+test_invalid_and_unknown_ids_preserve_rows_ac5 (test_tasks.TasksCLI.test_invalid_and_unknown_ids_preserve_rows_ac5) ... ok
+test_literal_titles_and_order_ac2 (test_tasks.TasksCLI.test_literal_titles_and_order_ac2) ... ok
+test_missing_parent_reports_storage_error_ac6 (test_tasks.TasksCLI.test_missing_parent_reports_storage_error_ac6) ... ok
+test_stopped_database_backup_restore_ac7 (test_tasks.TasksCLI.test_stopped_database_backup_restore_ac7) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.767s
+
+OK
+--- exit status: 0 ---

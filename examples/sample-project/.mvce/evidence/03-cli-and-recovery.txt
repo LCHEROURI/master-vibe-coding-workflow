@@ -1,0 +1,34 @@
+UTC: 2026-10-23T02:34:43.393847+00:00
+Working directory: /workspace/master-vibe-coding-workflow/examples/sample-project
+Command: bash smoke.sh
+SHA256 tasks.py: b144c6d589d79401046dd49b2442b7c24794aecd71b13846dc851ddf9b0a96d8
+SHA256 tests/test_tasks.py: 9913425b6cbd260d3989101f15634b42b50f8455eab49b84cd7c445147c44308
+SHA256 smoke.sh: e0a65bf68b365d91f4b080b51555e7fd1486de54f9863fb7b4d634d9e859a045
+--- combined stdout/stderr ---
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 list
++ cat /tmp/tmp.tlo9NNpF8R/empty.json
+[]
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 add 'Read WORKFLOW.md'
+{"id": 1, "title": "Read WORKFLOW.md", "done": false}
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 add 'Record evidence'
+{"id": 2, "title": "Record evidence", "done": false}
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 done 1
+{"id": 1, "title": "Read WORKFLOW.md", "done": true}
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 list
++ cat /tmp/tmp.tlo9NNpF8R/before.json
+[{"id": 1, "title": "Read WORKFLOW.md", "done": true}, {"id": 2, "title": "Record evidence", "done": false}]
++ cp /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 /tmp/tmp.tlo9NNpF8R/backup.sqlite3
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 add 'Temporary task'
+{"id": 3, "title": "Temporary task", "done": false}
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 list
++ cat /tmp/tmp.tlo9NNpF8R/modified.json
+[{"id": 1, "title": "Read WORKFLOW.md", "done": true}, {"id": 2, "title": "Record evidence", "done": false}, {"id": 3, "title": "Temporary task", "done": false}]
++ cp /tmp/tmp.tlo9NNpF8R/backup.sqlite3 /tmp/tmp.tlo9NNpF8R/tasks.sqlite3
++ python3 tasks.py --db /tmp/tmp.tlo9NNpF8R/tasks.sqlite3 list
++ cat /tmp/tmp.tlo9NNpF8R/restored.json
+[{"id": 1, "title": "Read WORKFLOW.md", "done": true}, {"id": 2, "title": "Record evidence", "done": false}]
++ cmp /tmp/tmp.tlo9NNpF8R/before.json /tmp/tmp.tlo9NNpF8R/restored.json
++ python3 - /tmp/tmp.tlo9NNpF8R
+PASS: CLI lifecycle and offline restore match expected task data
++ rm -rf -- /tmp/tmp.tlo9NNpF8R
+--- exit status: 0 ---

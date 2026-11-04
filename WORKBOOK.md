@@ -90,6 +90,8 @@
 |---|---|---|---|---|
 | | | | | |
 
+**Gate 6:** [ ] PASS — every unit satisfied its acceptance criteria and produced supporting evidence
+
 ---
 
 ## 7. Verification
@@ -127,34 +129,107 @@
 
 ---
 
-## 10. Deployment
+## 10. Pre-Deployment Gate
 
-- [ ] Deployment checklist complete
-- [ ] Rollback path confirmed
-- [ ] Human approval obtained if required
-- [ ] GO decision recorded
+_If the project never deploys anywhere, mark every item below N/A and skip to §13._
 
-**Gate 10:** [ ] PASS
+- [ ] Build passes
+- [ ] Tests pass
+- [ ] Type checks pass (N/A if not applicable)
+- [ ] Lint passes (N/A if not applicable)
+- [ ] Migrations reviewed (N/A if not applicable)
+- [ ] Environment variables present
+- [ ] Secrets not exposed
+- [ ] Authentication works
+- [ ] Authorization works
+- [ ] Payments tested (N/A if not applicable)
+- [ ] Backups verified
+- [ ] Observability active
+- [ ] Rollback path documented
+
+Required artifact: `.mvce/DEPLOYMENT-CHECKLIST.md`
+
+**Gate 10:** [ ] PASS — explicit GO decision recorded
 
 ---
 
-## 11. Production Verification
+## 11. Deployment
 
-- [ ] Application reachable
-- [ ] Critical workflow tested
-- [ ] Authentication tested if applicable
-- [ ] Key integrations tested
-- [ ] Error signals reviewed
+_No gate on this phase — record the release. N/A for local-only projects._
 
-**Gate 11:** [ ] PASS
+- [ ] Deployment target recorded
+- [ ] Version or commit recorded
+- [ ] Migration state recorded
+- [ ] Deployment identifier recorded
+- [ ] Deployment outcome recorded
+
+_If deployment fails, go to §13 Recovery._
 
 ---
 
-## 12. Recovery / Maintenance
+## 12. Production Verification
 
-- [ ] Recovery plan current
-- [ ] Known risks recorded
-- [ ] Maintenance tasks identified
+_N/A for local-only projects. Rule: local success does not satisfy this gate._
+
+- [ ] Application loads
+- [ ] Critical user path works
+- [ ] Authentication works (if present)
+- [ ] Critical write operations work
+- [ ] Errors are not spiking
+- [ ] External integrations respond
+- [ ] Expected version is running
+
+**Gate 12:** [ ] PASS — release is complete only after production verification succeeds
+
+---
+
+## 13. Recovery
+
+Required artifact: `.mvce/RECOVERY-PLAN.md`
+
+- [ ] Further uncontrolled changes stopped
+- [ ] Failure characterized
+- [ ] Relevant evidence preserved
+- [ ] Last known-good state identified
+- [ ] Repair vs. rollback decided
+- [ ] Bounded recovery executed
+- [ ] Restored behavior verified
+- [ ] Cause and resolution documented
+
+---
+
+## 14. Maintenance
+
+_Maintenance work re-enters the same MVCE loop as feature work._
+
+- [ ] Dependency health checked
+- [ ] Security advisories reviewed
+- [ ] Expired credentials rotated
+- [ ] Failing jobs addressed
+- [ ] Broken integrations fixed
+- [ ] Test drift corrected
+- [ ] Architecture drift corrected
+- [ ] Data growth reviewed
+- [ ] Backup validity confirmed
+- [ ] Cost growth reviewed
+- [ ] Observability gaps closed
+- [ ] Documentation drift corrected
+
+---
+
+## 15. Project Closeout
+
+- [ ] Current specification filed
+- [ ] Final acceptance status recorded
+- [ ] Known limitations listed
+- [ ] Architecture summary filed
+- [ ] Deployment state recorded
+- [ ] Recovery instructions filed
+- [ ] Unresolved risks listed
+- [ ] Evidence summary filed
+- [ ] Next recommended actions listed
+
+_A project is closed because evidence supports completion, not because activity stopped._
 
 ---
 
